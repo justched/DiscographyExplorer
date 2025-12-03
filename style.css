@@ -1,0 +1,179 @@
+/* General reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo / header */
+h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center; /* Always center */
+}
+
+/* Artist photo */
+#artist-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-top: 20px;
+  object-fit: cover;
+  display: none;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Artist name */
+#artist-name {
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Search box */
+#search-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 12px 18px;
+  width: 260px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #222;
+  color: #fff;
+}
+
+button {
+  padding: 12px 20px;
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #ff1f1f;
+}
+
+/* Albums grid */
+#albums {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1050px;
+}
+
+/* Album card */
+.album {
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease forwards;
+  transition: transform 0.2s;
+}
+
+.album:hover {
+  transform: translateY(-5px);
+}
+
+/* Album image */
+.album img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Album title */
+.album-title {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
+/* Animations */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 500px) {
+  #search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input, button {
+    width: 100%;
+  }
+
+  #albums {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .album {
+    padding: 8px;
+  }
+
+  #artist-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  #artist-name {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 350px) {
+  #albums {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+
+  .album-title {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
