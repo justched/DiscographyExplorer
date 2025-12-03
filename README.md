@@ -40,4 +40,4 @@ MIT License – free to use and modify.
 
 ## 🔗 Live Demo
 
-[Check out the live app]([https://your-username.github.io/Discography-Explorer/](https://justched.github.io/DiscographyExplorer/)
+[Check out the live app]((https://justched.github.io/DiscographyExplorer/)
